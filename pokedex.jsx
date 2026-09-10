@@ -1,4 +1,5 @@
 import{useState}from 'react';
+import  './pokedex.css'
 function Pokedex () {
 
     const[pokemon,setPokemon] = useState({});
@@ -17,7 +18,7 @@ function Pokedex () {
     }
 
     return ( 
-        <div>
+        <div className="caixa de texto">
             <h1>Pokédex</h1>
             <p> Consulte um pokemon</p>
             
