@@ -18,22 +18,24 @@ function Pokedex () {
     }
 
     return ( 
-        <div className="caixa de texto">
+        <div className="pokedex">
+            <div className="cartao">
             <h1>Pokédex</h1>
             <p> Consulte um pokemon</p>
             
           
-
+        <div className="pesquisa">
             <input onChange={e=>alteraPesquisa(e.target.value)}placeholder="Digite o Pokemon..."/>
             <button onClick={()=>buscarPokemon(pesquisa)}>🔎 Pesquisa</button>
             <hr/>
-          
-
+          </div>
+            <div className="informaçoes">
             <h2>Nome:{pokemon.name} </h2>
             <p>Tipo: {pokemon.types?.[0]?.type?.name} </p>
             <img src={pokemon.sprites?.versions?.["generation-v"]?.["black-white"]?.animated?.front_default}
             width="100"/>
-
+        </div>
+        </div>
         </div>
      );
 }
