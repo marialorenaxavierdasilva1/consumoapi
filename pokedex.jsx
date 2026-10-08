@@ -1,43 +1,49 @@
-import{useState}from 'react';
-import  './pokedex.css'
-function Pokedex () {
+import { useState } from 'react';
+import './pokedex.css'
+function Pokedex() {
 
-    const[pokemon,setPokemon] = useState({});
-    const[pesquisa,alteraPesquisa] =useState ("")
+    const [pokemon, setPokemon] = useState({});
+    const [pesquisa, alteraPesquisa] = useState("")
 
-    
-    async function buscarPokemon( nome ){
-    const response = await fetch ("https://pokeapi.co/api/v2/pokemon/"+nome);
-    const data = await response.json();
-    console.log(data);
-    setPokemon (data)
+
+    async function buscarPokemon(nome) {
+        const response = await fetch("https://pokeapi.co/api/v2/pokemon/" + nome);
+        const data = await response.json();
+        console.log(data);
+        setPokemon(data)
     }
 
-    function mostrarInformacoes(pokemon){
-        alert("Nome:" +pokemon.name + "\nTipo"+ pokemon.type + pokemon.sprites.other )
-    }
 
-    return ( 
+    return (
         <div className="pokedex">
             <div className="cartao">
-            <h1>Pokédex</h1>
-            <p> Consulte um pokemon</p>
-            
-          
-        <div className="pesquisa">
-            <input onChange={e=>alteraPesquisa(e.target.value)}placeholder="Digite o Pokemon..."/>
-            <button onClick={()=>buscarPokemon(pesquisa)}>🔎 Pesquisa</button>
-            <hr/>
-          </div>
-            <div className="informaçoes">
-            <h2>Nome:{pokemon.name} </h2>
-            <p>Tipo: {pokemon.types?.[0]?.type?.name} </p>
-            <img src={pokemon.sprites?.versions?.["generation-v"]?.["black-white"]?.animated?.front_default}
-            width="100"/>
+                <h1>Pokédex</h1>
+                <p> Consulte um pokemon</p>
+
+
+                <div className="pesquisa">
+                    <input onChange={e => alteraPesquisa(e.target.value)} placeholder="Digite o Pokemon..." />
+                    <button onClick={() => buscarPokemon(pesquisa)}>🔎 Pesquisa</button>
+                    <hr />
+                </div>
+                <div className="informacoes">
+                    <h2>Nome: {pokemon.name}</h2>
+
+                    <p>
+                        Tipo: {pokemon.types?.[0]?.type?.name}
+                    </p>
+
+                    <img
+                        src={
+                            pokemon.sprites?.versions?.["generation-v"]
+                                ?.["black-white"]?.animated?.front_default
+                        }
+                        alt={pokemon.name}
+                    />
+                </div>
+            </div>
         </div>
-        </div>
-        </div>
-     );
+    );
 }
 
 export default Pokedex;

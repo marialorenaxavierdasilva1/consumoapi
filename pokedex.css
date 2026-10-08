@@ -1,50 +1,61 @@
 *{
     box-sizing: border-box;
 }
+
 body{
+    margin: 0;
     background-color: rgb(224, 203, 11);
 }
+
 .pokedex{
-    min_height:100vh;
+    min-height: 100vh;
     display: flex;
-    justify-content:center;
+    justify-content: center;
     align-items: center;
-    padding:30px 15px;
+    padding: 30px 15px;
     text-align: center;
 }
 
 .cartao{
-    width:100%;
-    background-color:white;
-    border:5px solid#222;
-    border-radius:20px;
-    padding:25px;
+    width: 100%;
+    max-width: 500px;
+    background-color: white;
+    border: 5px solid #222;
+    border-radius: 20px;
+    padding: 25px;
 }
-h1{
-    color:#e33535
-}
-.pesquisa{
-    margin-bottom:20px;
 
+h1{
+    color: #e33535;
 }
+
+.pesquisa{
+    margin-bottom: 20px;
+}
+
 .pesquisa input{
-    padding:10px;
-    border:2px solid #222;
+    padding: 10px;
+    border: 2px solid #222;
     border-radius: 8px;
 }
+
 .pesquisa button{
-    padding:10px;
+    padding: 10px;
     margin-left: 5px;
     background-color: #e33535;
     color: white;
     border: 2px solid #222;
-    border-radius: 8px
+    border-radius: 8px;
+    cursor: pointer;
 }
 
 .informacoes{
     background-color: #f2f2f2;
     border: 2px solid #222;
-
+    border-radius: 10px;
+    padding: 15px;
 }
 
-
+.informacoes img{
+    width: 140px;
+}
